@@ -16,7 +16,7 @@ set $mod Mod4
 font pango:monospace 12
 
 exec_always feh --bg-scale ~/Pictures/Wallpapers/Big-Sur-Color-Night.jpg
-exec_always --no-startup-id picom --shadow-exclude "class_g = '.*'"
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 
 gaps inner 15
@@ -34,6 +34,7 @@ client.background       #ffffff
 
 bindsym $mod+space exec ulauncher
 bindsym $mod+Shift+Return exec firefox
+bindsym $mod+Shift+q exec i3-msg exit
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -207,7 +208,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-        position top
+        position bottom
         tray_output none
       	i3bar_command i3bar --transparency
       	colors {
@@ -215,8 +216,8 @@ bar {
         	statusline #ffffff
         	separator #666666
 
-        	focused_workspace  #333333 #171718 #000000
-        	active_workspace   #ff0000 #ff0000 #ffffff
+        	focused_workspace  #ffffff #171718 #ffffff
+        	active_workspace   #ff0000 #171718 #ffffff
         	inactive_workspace #333333 #171718 #333333
         	
       	}
